@@ -74,12 +74,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     hint: 'Email',
                     obscure: false,
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return 'Please enter your email';
+                      }
                       if (!RegExp(
                         r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$',
-                      ).hasMatch(value))
+                      ).hasMatch(value)) {
                         return 'Enter a valid email';
+                      }
                       return null;
                     },
                   ),
@@ -103,10 +105,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                     ),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return 'Please enter your password';
-                      if (value.length < 6)
+                      }
+                      if (value.length < 6) {
                         return 'Password must be at least 6 characters';
+                      }
                       return null;
                     },
                   ),
